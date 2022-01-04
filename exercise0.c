@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iso646.h> // will allow use of [and, or, not]
-#define not !
 
 int main(){
 
