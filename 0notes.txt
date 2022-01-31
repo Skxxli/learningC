@@ -1,2 +1,6 @@
+emacs Cheatsheet
 https://courses.cs.washington.edu/courses/cse351/17wi/sections/01/Cheatsheet-emacs.pdf
 
+
+logic helpers
+https://www.csm.ornl.gov/~sheldon/ds/ex1.1.2.html
