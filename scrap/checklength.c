@@ -1,33 +1,42 @@
 #include <stdio.h>
+#define MAX_CHAR 999
 
 void checklength(void);
 
 void checklength(void) {
 
-    char char_array[999];
+    char char_array[MAX_CHAR];
     char single_char, beginning_char = '0';
     int line_size, index = 0;
     
 
-    while (!(feof(stdin))) {
+   while (!feof(stdin)) {
 
         scanf("%c", &single_char);
 
-        char_array[line_size] = single_char;
-        line_size++;
-    }
-    
-    beginning_char = (line_size > 80)?  'X' : ' ';
+        if (single_char == '\n'){
 
-    printf("%c %3d:", beginning_char, line_size);
+            beginning_char = (line_size > 80)? 'X' : ' '; 
 
-    for (index; index < line_size; index++) {
-        printf("%c", char_array[index]);
+            printf("%c %3d: ", beginning_char, line_size); 
+
+            index = 0;  /* Resets index */
+            for (; index < line_size; index++){
+                printf("%c", char_array[index]);
+            }
+            printf("\n");
+            line_size = 0;         /* Resets line character count */
+        } else {
+            char_array[line_size] = single_char;
+            line_size++;
+        }
     }
+        
 }
 
 int main(void) {
 
-checklength();
+    checklength();
 
+    return 0;
 }
